@@ -1,0 +1,146 @@
+%Carattere dimensione 12
+\documentclass[12pt]{article}
+
+%Margini e interlinea
+\usepackage[top=1in, bottom=1in, left=1.2in, right=1in]{geometry}
+\pagestyle{plain}
+\linespread{1.5}
+
+%Librerie utili
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{libertine}
+\usepackage{graphicx}
+\usepackage{floatflt}
+\usepackage{blindtext}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\usepackage{subfig}
+\usepackage{listings}
+\usepackage{listingsutf8}
+\usepackage{amsmath}
+\usepackage{framed}
+\usepackage{minibox}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage[strict]{changepage}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\pgfplotsset{width=11cm,compat=1.9}
+\usepgfplotslibrary{external}
+\tikzexternalize
+
+\begin{document}
+
+\begin{titlepage}
+\begin{figure}[t]
+	\centering\includegraphics[width=0.9\textwidth]{media/scritta}
+    \centering\includegraphics[width=0.4\textwidth]{media/logo}
+\end{figure}
+
+\begin{center}
+	\textbf{ Department of Computer Science\\ Degree course in Computer Science\\}
+	\vspace{15mm}
+    {\LARGE{\bf Machine learning techniques}}\\
+	\vspace{3mm}
+	{\LARGE{\bf for 3D point clouds}}\\
+\end{center}
+
+\vspace{20mm}
+
+\begin{minipage}[t]{0.47\textwidth}
+	{\large{\bf Relatori:\\ Prof. Davide Bacciu\\ Prof. Daniela Giorgi \\ Prof. Paolo Cignioni \\ Prof. Francesco Banterle}}
+\end{minipage}\hfill\begin{minipage}[t]{0.47\textwidth}\raggedleft
+	{\large{\bf Presented by: \\ Mattia Angelini\\ }}
+\end{minipage}
+
+\vspace{18mm}
+
+\centering{\large{\bf Winter Session\\ Academic Year 2018/2019 }}
+
+\end{titlepage}
+
+%Table of contents ---------------------------------
+\tableofcontents
+\clearpage
+%---------------------------------------------------
+
+\section{Introduction}
+3D data can be represented in many different ways, 
+where each one inspired new approaches to Deep Learning techniques with their pro and cons.
+\\
+However in the last years, the importance of 3D point clouds have risen consistently, 
+due to the use in the sensor of smartphones and self-driving cars, 
+but despite that, the focus remains only on how to process those data improving on the models themselves, 
+without put efforts in how to encode those data.
+\\
+We then have chosen to direct our efforts, 
+on how to improve on the encoding of the information on 3D Point Clouds and, 
+see how this reflects on the results of the currently developed models.
+
+\subsection{Other 3D techniques}
+Before proceeding, we would like to introduce other machine learning techniques on 3D data, 
+starting with the \textbf{view-based} approach.
+\\
+\textbf{View-based} systems use a group of view of a 3D object to capture its spatial information[]\, 
+enabling us to use the success achieved in the Deep Learning for images like the CNN[] directly to the views.
+This, however, means that we need many views and usually is very memory intensive even if the average speed is good.
+\\
+\textbf{Voxels}, on the other hand, 
+encode the information of the 3D data in a regular 3-dimensional grid, where each cube represent a unit of volume in which the 3D is stored, 
+giving us a volumetric representation.
+Having a 3D grid means that we could extend the techniques like the convolution to this data rapresentation[ref to voxnet], 
+at the cost of computational complexity passing by $ O(n^2) $ to $ O(n^3) $, new techniques improve on this using a subdivision of the grid in OctTrees with patches to aggregate groups of Voxels[A-oCNN].
+\\
+In the end, \textbf{Surface-based} representation, 
+aims to understand the information of objects using their superficial information, 
+however, working with this type of data is not straightforward and usually what is done is to encode the mesh in a 2-dimensional space[], 
+at this point, we can use the well-asserted techniques for images. 
+But they can create some artefacts and require a good mesh to work with.  
+
+\subsection{Learning on graphs}
+We have decide to introduce also the results achived in the deep learning applied to graphs, 
+and see the proble also from this point of view, and see what the results achived in this field can done for this type of data.
+
+
+%---------------------------------------------------
+% Start of the Background about the point cloud data
+%---------------------------------------------------
+\section{Background and Related Works}
+
+\subsection{3D Point Clouds}
+
+\subsubsection{Pointnet}
+
+
+
+
+%---------------------------------------------------
+% Start part about what we have tried
+%---------------------------------------------------
+\section{Techniques for 3D Point Clouds}
+
+\subsection{Sampling}
+
+\
+
+%---------------------------------------------------
+% Start part about what we have tried
+%---------------------------------------------------
+\section{Results}
+
+
+\section{Observations}
+
+
+\section{Conclusions}
+
+\appendix
+
+\bibliography{references}
+\bibliographystyle{plain}
+
+
+\end{document}
