@@ -1,3 +1,4 @@
+% Encoding: UTF-8
 @article {Wang-2017-ocnn,
 title 		= {{Adaptive O-CNN: A Patch-based Deep Representation of 3D Shapes}},
 author 		= {Wang, Peng-Shuai and Liu, Yang and Guo, Yu-Xiao and Sun, Chun-Yu and Tong, Xin},
@@ -49,4 +50,15 @@ publisher = {Curran Associates, Inc.},
 url = {http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf}
 }
 
+@InProceedings{7353481,
+  author    = {D. {Maturana} and S. {Scherer}},
+  title     = {VoxNet: A 3D Convolutional Neural Network for real-time object recognition},
+  booktitle = {2015 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year      = {2015},
+  pages     = {922-928},
+  month     = {Sep.},
+  doi       = {10.1109/IROS.2015.7353481},
+  keywords  = {image representation;neurocontrollers;object recognition;real-time systems;robot vision;VoxNet;3D convolutional neural network;real-time object recognition;robust object recognition;robots;range sensors;point cloud data;volumetric occupancy grid representation;Three-dimensional displays;Object recognition;Laser radar;Sensors;Neural networks;Feature extraction;Robots},
+}
 
+@Comment{jabref-meta: databaseType:bibtex;}

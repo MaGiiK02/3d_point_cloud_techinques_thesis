@@ -82,34 +82,39 @@ see how this reflects on the results of the currently developed models.
 
 \subsection{Other 3D techniques}
 Before proceeding, we would like to introduce other machine learning techniques on 3D data, 
-starting with the \textbf{view-based} approach.
-\\
-\textbf{View-based} systems use a group of view of a 3D object to capture its spatial information[]\, 
-enabling us to use the success achieved in the Deep Learning for images like the CNN[] directly to the views.
-This, however, means that we need many views and usually is very memory intensive even if the average speed is good.
-\\
-\textbf{Voxels}, on the other hand, 
-encode the information of the 3D data in a regular 3-dimensional grid, where each cube represent a unit of volume in which the 3D is stored, 
-giving us a volumetric representation.
-Having a 3D grid means that we could extend the techniques like the convolution to this data rapresentation[ref to voxnet], 
-at the cost of computational complexity passing by $ O(n^2) $ to $ O(n^3) $, new techniques improve on this using a subdivision of the grid in OctTrees with patches to aggregate groups of Voxels[A-oCNN].
-\\
-In the end, \textbf{Surface-based} representation, 
-aims to understand the information of objects using their superficial information, 
-however, working with this type of data is not straightforward and usually what is done is to encode the mesh in a 2-dimensional space[], 
-at this point, we can use the well-asserted techniques for images. 
-But they can create some artefacts and require a good mesh to work with.  
+starting with the 
+
+\subsection{Multi-views}
+\textit{Multi-views} systems use a group of view of a 3D object to capture its spatial information\, 
+enabling us to use the success achieved in the Deep Learning for images directly to the views. 
+The main focus here is to find a way to obtain those views, 
+and how feed those view to the machine learning algorithm, 
+the MVCC\cite{su15mvcnn} newtworks was one of the first using this technique, suffering from a big memory footprint.
+
+\subsection{Voxel}
+\textit{Voxels} on the other hand, 
+encode the information of the 3D data in a regular 3-dimensional grid, where each cube represent a unit of volume in which the 3D information is stored, giving us a volumetric representation of the object.
+Having a 3D grid means that we could extend the techniques like the convolution to this data rapresentation\cite{7353481}, 
+at the cost of computational complexity passing by $ O(n^2) $ to $ O(n^3) $ due to the new dimension. New techniques improve on this using a subdivision of the grid in OctTrees with patches to aggregate groups of Voxels\cite{Wang-2017-ocnn}, using this method is possible to work on bigger and more detailed grids.
+Voxels are also used to process point cloud data, here the points are voxelized, enabling the use of voxel techniques to process point cloud data sacrificing some information and accuracy about the object surface, expressed from 3D point clouds.
+
+\subsection{Surface-based}
+\textit{Surface-based} representation, aims to understand the information of objects using their superficial information, 
+however, working with this type of data is not straightforward due to their non-uniform rapresentation.
+To overcome this issue many solution are proposed, form work on the 3d using special convolution\cite{Hanocka_2019} to use Geodesic patch to ecapsule the shapes of the surface in images to pass trought a CNN network\cite{masci2015geodesic}.
+However use surface-based approaches usually require well structured meshes use to rapresnt the surface, making difficult to work in real world scenarios with noise.
 
 \subsection{Learning on graphs}
-We have decide to introduce also the results achived in the deep learning applied to graphs, 
-and see the proble also from this point of view, and see what the results achived in this field can done for this type of data.
+Machine learning applied to graph is a different field form the 3d based learning sector, despite that we can find some similarity form the data structure of graphs and meshes as well as cloud points.
+Is interesting how the core framework used in machine learning on graphs, the Message Passing Neural Network\cite{gilmer2017neural},  can be adapted to perform the same procedure in some scenarios of the 3D based machine learning like the before mentioned MeshCNN\cite{} or the PointNet++\cite{}.
+Despite the new state of the art techniques like the Deep Graph Infomax\cite{velikovi2018deep}, and the GraphSage\cite{hamilton2017inductive} that improve on the core technology have still to be implemented for 3D data.
 
 
 %---------------------------------------------------
 % Start of the Background about the point cloud data
 %---------------------------------------------------
 \section{Background and Related Works}
-
+In the last years 3D point clouds 
 \subsection{3D Point Clouds}
 
 \subsubsection{Pointnet}
